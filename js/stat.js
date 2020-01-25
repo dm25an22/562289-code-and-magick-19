@@ -40,19 +40,11 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillStyle = '#000000';
   ctx.font = '16px PT Mono';
 
-  ctx.fillText(
-    'Ура вы победили!',
-    BOX_X + GAP * 2,
-    BOX_Y + GAP * 3
-  );
+  ctx.fillText('Ура вы победили!', BOX_X + GAP * 2, BOX_Y + GAP * 3);
 
-  ctx.fillText(
-    'Список результатов:',
-    BOX_X + GAP * 2,
-    BOX_Y + GAP * 3 + FONT_GAP
-  );
+  ctx.fillText('Список результатов:', BOX_X + GAP * 2, BOX_Y + GAP * 3 + FONT_GAP);
 
-var maxTime = getMaxTime(times);
+  var maxTime = getMaxTime(times);
 
   for (var i = 0; i < names.length; i++) {
 
@@ -61,32 +53,19 @@ var maxTime = getMaxTime(times);
     var currentColumnHeigh = COLUMN_HEIGHT * curentTime / maxTime;
     var randomColor = 'hsl(' + 240 + ', ' + getRandomNumber(10, 90) + '%' + ', ' + getRandomNumber(10, 90) + '%' + ')';
 
-      ctx.fillText(
-        names[i],
-        coordinateX,
-        BOX_HEIGHT
-      );
+    ctx.fillText(names[i], coordinateX, BOX_HEIGHT);
 
-        if (names[i] === 'Вы') {
-          ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-        } else {
-          ctx.fillStyle = randomColor;
-        }
+    if (names[i] === 'Вы') {
+      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+    } else {
+      ctx.fillStyle = randomColor;
+    }
 
-      ctx.fillRect(
-        coordinateX,
-        BOX_HEIGHT - GAP - FONT_GAP - currentColumnHeigh,
-        COLUMN_WIDTH,
-        currentColumnHeigh
-      );
+    ctx.fillRect(coordinateX, BOX_HEIGHT - GAP - FONT_GAP - currentColumnHeigh, COLUMN_WIDTH, currentColumnHeigh);
 
-      ctx.fillStyle = '#000000';
+    ctx.fillStyle = '#000000';
 
-      ctx.fillText(
-        curentTime,
-        coordinateX,
-        BOX_HEIGHT - FONT_GAP - (GAP * 2) - currentColumnHeigh
-      );
+    ctx.fillText(curentTime, coordinateX, BOX_HEIGHT - FONT_GAP - (GAP * 2) - currentColumnHeigh);
   }
 };
 
