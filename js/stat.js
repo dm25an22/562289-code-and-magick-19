@@ -7,13 +7,12 @@ var BOX_Y = 10;
 var GAP = 10;
 var SPACE = 50;
 var FONT_GAP = 16;
-
 var COLUMN_WIDTH = 40;
 var COLUMN_HEIGHT = 150;
 
 var renderBox = function (ctx, x, y, color) {
   ctx.fillStyle = color;
-  ctx.fillRect(x, y, BOX_WIDTH, BOX_HEIGHT, color);
+  ctx.fillRect(x, y, BOX_WIDTH, BOX_HEIGHT);
 };
 
 var getMaxTime = function (arr) {
@@ -49,11 +48,11 @@ window.renderStatistics = function (ctx, names, times) {
   for (var i = 0; i < names.length; i++) {
 
     var coordinateX = BOX_X + SPACE + (COLUMN_WIDTH + SPACE) * i;
-    var curentTime = Math.floor(times[i]);
-    var currentColumnHeigh = COLUMN_HEIGHT * curentTime / maxTime;
+    var currentTime = Math.floor(times[i]);
+    var currentColumnHeight = COLUMN_HEIGHT * currentTime / maxTime;
     var randomColor = 'hsl(' + 240 + ', ' + getRandomNumber(10, 90) + '%' + ', ' + getRandomNumber(10, 90) + '%' + ')';
 
-    ctx.fillText(names[i], coordinateX, BOX_HEIGHT);
+    ctx.fillText(currentTime, coordinateX, BOX_HEIGHT - FONT_GAP - (GAP * 2) - currentColumnHeight);
 
     if (names[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
@@ -61,11 +60,11 @@ window.renderStatistics = function (ctx, names, times) {
       ctx.fillStyle = randomColor;
     }
 
-    ctx.fillRect(coordinateX, BOX_HEIGHT - GAP - FONT_GAP - currentColumnHeigh, COLUMN_WIDTH, currentColumnHeigh);
+    ctx.fillRect(coordinateX, BOX_HEIGHT - GAP - FONT_GAP - currentColumnHeight, COLUMN_WIDTH, currentColumnHeight);
 
     ctx.fillStyle = '#000000';
 
-    ctx.fillText(curentTime, coordinateX, BOX_HEIGHT - FONT_GAP - (GAP * 2) - currentColumnHeigh);
+    ctx.fillText(names[i], coordinateX, BOX_HEIGHT);
   }
 };
 
