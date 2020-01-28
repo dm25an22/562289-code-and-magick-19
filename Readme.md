@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
 
 * Студент: [Daniel Mironenko](https://up.htmlacademy.ru/javascript/19/user/562289).
-* Наставник: `Неизвестно`.
+* Наставник: `Даниил Сташевский`.
 
 ---
 
