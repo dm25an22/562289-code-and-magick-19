@@ -18,12 +18,8 @@ var getRandomNumber = function (min, max) {
 };
 
 var getRandomIndex = function (arr) {
-  var result;
 
-  for (var i = 0; i < arr.length; i++) {
-    result = arr[getRandomNumber(0, arr.length - 1)];
-  }
-  return result;
+  return arr[getRandomNumber(0, arr.length - 1)];
 };
 
 
@@ -92,17 +88,6 @@ var wizardEyesInput = setup.querySelector('input[name=eyes-color]');
 
 var firball = setup.querySelector('.setup-fireball-wrap');
 var firballInput = setup.querySelector('input[name=fireball-color]');
-
-var getRandomNumber = function (min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max)
-
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-var getRandomIndex = function (min, arr) {
-  return arr[getRandomNumber(0, arr.length - 1)];
-}
 
 
 var onPopupEscPress = function (evt) {
