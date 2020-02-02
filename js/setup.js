@@ -2,10 +2,12 @@
 
 var setup = document.querySelector('.setup');
 
-var firstNames = ['Иван Хуан', 'Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
-var lastNames = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
-var coatColors = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
-var eyesColors = ['black', 'red', 'blue', 'yellow', 'green'];
+var FIRST_NAME = ['Иван Хуан', 'Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
+var LAST_NAME = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
+var COLORS_COAT = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
+var COLORS_EYES = ['black', 'red', 'blue', 'yellow', 'green'];
+var COLORS_FAIREBALL = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
+
 
 
 var getRandomNumber = function (min, max) {
@@ -31,9 +33,9 @@ var renderSimilarCharacters = function (quantity) {
   for (var i = 0; i < quantity; i++) {
     alikeCharacters.push(
         {
-          name: getRandomIndex(firstNames) + ' ' + getRandomIndex(lastNames),
-          coatColor: getRandomIndex(coatColors),
-          eyesColor: getRandomIndex(eyesColors),
+          name: getRandomIndex(FIRST_NAME) + ' ' + getRandomIndex(LAST_NAME),
+          coatColor: getRandomIndex(COLORS_COAT),
+          eyesColor: getRandomIndex(COLORS_EYES),
         }
     );
   }
@@ -76,9 +78,6 @@ setupSimilar.classList.remove('hidden');
 
 var ESC_KEY = 'Escape';
 var ENTER_KEY = 'Enter';
-let COLORS_COAT = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
-var COLORS_EYES = ['black', 'red', 'blue', 'yellow', 'green'];
-var COLORS_FAIREBALL = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
 var setupOpen = document.querySelector('.setup-open');
 var setup = document.querySelector('.setup');
