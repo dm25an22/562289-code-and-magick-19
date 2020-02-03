@@ -8,14 +8,12 @@ var COLORS_COAT = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161
 var COLORS_EYES = ['black', 'red', 'blue', 'yellow', 'green'];
 var COLORS_FAIREBALL = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
-
-
 var getRandomNumber = function (min, max) {
   min = Math.ceil(min);
-  max = Math.floor(max)
+  max = Math.floor(max);
 
   return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
 
 var getRandomIndex = function (arr) {
   var result;
@@ -74,13 +72,10 @@ var setupSimilar = document.querySelector('.setup-similar');
 setupSimilar.classList.remove('hidden');
 
 
-
-
 var ESC_KEY = 'Escape';
 var ENTER_KEY = 'Enter';
 
 var setupOpen = document.querySelector('.setup-open');
-var setup = document.querySelector('.setup');
 var setupClose = setup.querySelector('.setup-close');
 var nameInput = setup.querySelector('.setup-user-name');
 
@@ -98,17 +93,17 @@ var onPopupEscPress = function (evt) {
   if (evt.key === ESC_KEY) {
     closePopup();
   }
-}
+};
 
 var openPopup = function () {
   setup.classList.remove('hidden');
   document.addEventListener('keydown', onPopupEscPress);
-}
+};
 
 var closePopup = function () {
   setup.classList.add('hidden');
   document.removeEventListener('keydown', onPopupEscPress);
-}
+};
 
 setupOpen.addEventListener('click', function () {
   openPopup();
@@ -121,7 +116,7 @@ setupOpen.addEventListener('keydown', function (evt) {
 });
 
 setupClose.addEventListener('click', function () {
-  closePopup()
+  closePopup();
 });
 
 setupClose.addEventListener('keydown', function (evt) {
@@ -131,7 +126,7 @@ setupClose.addEventListener('keydown', function (evt) {
 });
 
 nameInput.addEventListener('focus', function () {
-    document.removeEventListener('keydown', onPopupEscPress);
+  document.removeEventListener('keydown', onPopupEscPress);
 });
 
 nameInput.addEventListener('blur', function () {
@@ -154,6 +149,6 @@ wizardEyes.addEventListener('click', function () {
 firball.addEventListener('click', function () {
   var color = getRandomIndex(COLORS_FAIREBALL);
   firball.style.background = color;
-  firball.value = color;
+  firballInput.value = color;
 });
 
