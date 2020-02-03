@@ -12,14 +12,18 @@ var COLORS_FAIREBALL = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
 var getRandomNumber = function (min, max) {
   min = Math.ceil(min);
-  max = Math.floor(max);
+  max = Math.floor(max)
 
   return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+}
 
 var getRandomIndex = function (arr) {
+  var result;
 
-  return arr[getRandomNumber(0, arr.length - 1)];
+  for (var i = 0; i < arr.length; i++) {
+    result = arr[getRandomNumber(0, arr.length - 1)];
+  }
+  return result;
 };
 
 
@@ -134,20 +138,21 @@ nameInput.addEventListener('blur', function () {
   document.addEventListener('keydown', onPopupEscPress);
 });
 
+
 wizardCoat.addEventListener('click', function () {
-  var color = getRandomIndex(0, COLORS_COAT);
+  var color = getRandomIndex(COLORS_COAT);
   wizardCoat.style.fill = color;
   wizardCoatInput.value = color;
 });
 
 wizardEyes.addEventListener('click', function () {
-  var color = getRandomIndex(0, COLORS_EYES);
+  var color = getRandomIndex(COLORS_EYES);
   wizardEyes.style.fill = color;
   wizardEyesInput.value = color;
 });
 
 firball.addEventListener('click', function () {
-  var color = getRandomIndex(0, COLORS_FAIREBALL);
+  var color = getRandomIndex(COLORS_FAIREBALL);
   firball.style.background = color;
   firball.value = color;
 });
