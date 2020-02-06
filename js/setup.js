@@ -6,7 +6,7 @@ var FIRST_NAME = ['Иван Хуан', 'Себастьян', 'Мария', 'Кр
 var LAST_NAME = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 var COLORS_COAT = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var COLORS_EYES = ['black', 'red', 'blue', 'yellow', 'green'];
-var COLORS_FAIREBALL = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
+var COLORS_FAIREBAL = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
 var getRandomNumber = function (min, max) {
   min = Math.ceil(min);
@@ -133,22 +133,21 @@ nameInput.addEventListener('blur', function () {
   document.addEventListener('keydown', onPopupEscPress);
 });
 
+var getRandomColor = function (arrColors, input) {
+  var color = getRandomIndex(arrColors);
+  input.value = color;
+
+  return color;
+}
 
 wizardCoat.addEventListener('click', function () {
-  var color = getRandomIndex(COLORS_COAT);
-  wizardCoat.style.fill = color;
-  wizardCoatInput.value = color;
+  wizardCoat.style.fill = getRandomColor(COLORS_COAT, wizardCoatInput);
 });
 
 wizardEyes.addEventListener('click', function () {
-  var color = getRandomIndex(COLORS_EYES);
-  wizardEyes.style.fill = color;
-  wizardEyesInput.value = color;
+  wizardEyes.style.fill =  getRandomColor(COLORS_EYES, wizardEyesInput);
 });
 
 firball.addEventListener('click', function () {
-  var color = getRandomIndex(COLORS_FAIREBALL);
-  firball.style.background = color;
-  firballInput.value = color;
+  firball.style.background = getRandomColor(COLORS_FAIREBAL, firballInput);
 });
-
