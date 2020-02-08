@@ -133,21 +133,21 @@ nameInput.addEventListener('blur', function () {
   document.addEventListener('keydown', onPopupEscPress);
 });
 
-var getRandomColor = function (arrColors, input) {
-  var color = getRandomIndex(arrColors);
-  input.value = color;
-
-  return color;
-}
 
 wizardCoat.addEventListener('click', function () {
-  wizardCoat.style.fill = getRandomColor(COLORS_COAT, wizardCoatInput);
+  var color = getRandomIndex(COLORS_COAT);
+  wizardCoat.style.fill = color;
+  wizardCoatInput.value = color;
 });
 
 wizardEyes.addEventListener('click', function () {
-  wizardEyes.style.fill =  getRandomColor(COLORS_EYES, wizardEyesInput);
+  var color = getRandomIndex(COLORS_EYES);
+  wizardEyes.style.fill = color;
+  wizardEyesInput.value = color;
 });
 
 fireball.addEventListener('click', function () {
-  fireball.style.background = getRandomColor(COLORS_FAIREBALL, fireballInput);
+  var color = getRandomIndex(COLORS_FAIREBALL);
+  fireball.style.background = color;
+  fireballInput.value = color;
 });
