@@ -6,7 +6,7 @@ var FIRST_NAME = ['Иван Хуан', 'Себастьян', 'Мария', 'Кр
 var LAST_NAME = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 var COLORS_COAT = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var COLORS_EYES = ['black', 'red', 'blue', 'yellow', 'green'];
-var COLORS_FAIREBAL = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
+var COLORS_FAIREBALL = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
 var getRandomNumber = function (min, max) {
   min = Math.ceil(min);
@@ -85,8 +85,8 @@ var wizardCoatInput = setup.querySelector('input[name=coat-color]');
 var wizardEyes = setup.querySelector('.setup-wizard .wizard-eyes');
 var wizardEyesInput = setup.querySelector('input[name=eyes-color]');
 
-var firball = setup.querySelector('.setup-fireball-wrap');
-var firballInput = setup.querySelector('input[name=fireball-color]');
+var fireball = setup.querySelector('.setup-fireball-wrap');
+var fireballInput = setup.querySelector('input[name=fireball-color]');
 
 
 var onPopupEscPress = function (evt) {
@@ -148,6 +148,6 @@ wizardEyes.addEventListener('click', function () {
   wizardEyes.style.fill =  getRandomColor(COLORS_EYES, wizardEyesInput);
 });
 
-firball.addEventListener('click', function () {
-  firball.style.background = getRandomColor(COLORS_FAIREBAL, firballInput);
+fireball.addEventListener('click', function () {
+  fireball.style.background = getRandomColor(COLORS_FAIREBALL, fireballInput);
 });
