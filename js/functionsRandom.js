@@ -19,8 +19,8 @@
   };
 
   window.functionsRandom = {
-    getRandomNumber,
-    getRandomIndex
+    getRandomNumber: getRandomNumber,
+    getRandomIndex: getRandomIndex
   };
 
 })();

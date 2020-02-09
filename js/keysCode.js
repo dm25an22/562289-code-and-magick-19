@@ -6,8 +6,8 @@
   var ENTER_KEY = 'Enter';
 
   window.keysCode = {
-    ESC_KEY,
-    ENTER_KEY
+    ESC_KEY: ESC_KEY,
+    ENTER_KEY: ENTER_KEY
   };
 
 })();
