@@ -2,7 +2,7 @@
 
 (function () {
 
-  var COLORS_FAIREBALL = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
+  var COLORS_FIREBALL = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
   var getRandomIndex = window.functionsRandom.getRandomIndex;
   var COLORS_COAT = window.data.COLORS_COAT;
@@ -34,7 +34,7 @@
   });
 
   fireball.addEventListener('click', function () {
-    var color = getRandomIndex(COLORS_FAIREBALL);
+    var color = getRandomIndex(COLORS_FIREBALL);
     fireball.style.background = color;
     firebalInput.value = color;
   });
