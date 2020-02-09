@@ -27,9 +27,9 @@
   var similarCharacters = renderSimilarCharacters(4);
 
   window.data = {
-    COLORS_COAT: COLORS_COAT,
-    COLORS_EYES: COLORS_EYES,
-    similarCharacters: similarCharacters
+    COLORS_COAT,
+    COLORS_EYES,
+    similarCharacters
   };
 
 })();
