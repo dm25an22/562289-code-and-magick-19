@@ -61,5 +61,8 @@
     document.addEventListener('keydown', onPopupEscPress);
   });
 
+  window.setupPopup = {
+    closePopup: closePopup
+  }
 
 })();
