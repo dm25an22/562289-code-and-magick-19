@@ -63,6 +63,6 @@
 
   window.setupPopup = {
     closePopup: closePopup
-  }
+  };
 
 })();
