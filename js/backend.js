@@ -2,6 +2,9 @@
 
 (function () {
 
+  var STATUS_CODE_OK = 200;
+  var TIMEOUT_IN_MS = 10000;
+
   var error = function (status) {
 
     var mistake;
@@ -45,7 +48,7 @@
         break;
 
       case 521:
-        error = 'веб-сервер не работает';
+        mistake = 'веб-сервер не работает';
         break;
 
       default:
@@ -66,7 +69,6 @@
     node.style.background = 'red';
     node.style.position = 'fixed';
     node.style.zIndex = '100';
-    node.style.textAlign = 'left';
     node.style.padding = '0 10px';
     node.style.color = 'fff';
     node.style.fontSize = '16px';
@@ -75,22 +77,20 @@
     document.body.insertAdjacentElement('afterbegin', node);
   };
 
+  var setRequest = function (url, method, onLoad, onError, data) {
 
-  var load = function (url, onLoad, onError) {
     var xhr = new XMLHttpRequest();
-
-    var StatusCodeOK = 200;
-    var TIMEOUT_IN_MS = 10000;
 
     xhr.responseType = 'json';
 
     xhr.addEventListener('load', function () {
 
-      if (xhr.status === StatusCodeOK) {
+      if (xhr.status === STATUS_CODE_OK) {
         onLoad(xhr.response);
       } else {
         onError(error(xhr.status));
       }
+
     });
 
     xhr.addEventListener('error', function () {
@@ -104,38 +104,25 @@
     xhr.timeout = TIMEOUT_IN_MS;
 
 
-    xhr.open('GET', url);
-    xhr.send();
-
-  };
-
-
-  var save = function (url, data, onLoad, onError) {
-    var xhr = new XMLHttpRequest();
-    var StatusCodeOK = 200;
-
-    xhr.addEventListener('load', function () {
-
-      if (xhr.status === StatusCodeOK) {
-        onLoad(xhr.response);
-      } else {
-        onError(error(xhr.status));
-      }
-
-    });
-
-    xhr.addEventListener('error', function () {
-      onError('Произошла ошибка соединения');
-    });
-
-    xhr.open('POST', url);
+    xhr.open(method, url);
     xhr.send(data);
+
+  }
+
+  var load = function (url, method, onLoad, onError) {
+    setRequest(url, method, onLoad, onError);
   };
+
+
+  var save = function (url, method, onLoad, onError, data) {
+    setRequest(url, method, onLoad, onError, data)
+  };
+
 
   window.backend = {
     load: load,
     save: save,
-    getError: getError
+    getError: getError,
   };
 
 })();

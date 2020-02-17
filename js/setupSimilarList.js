@@ -35,6 +35,6 @@
 
   var getError = window.backend.getError;
 
-  window.backend.load('https://js.dump.academy/code-and-magick/data', onSuccess, getError);
+  window.backend.load('https://js.dump.academy/code-and-magick/data', 'GET', onSuccess, getError);
 
 })();
