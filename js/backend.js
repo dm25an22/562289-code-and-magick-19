@@ -107,7 +107,7 @@
     xhr.open(method, url);
     xhr.send(data);
 
-  }
+  };
 
   var load = function (url, method, onLoad, onError) {
     setRequest(url, method, onLoad, onError);
@@ -115,7 +115,7 @@
 
 
   var save = function (url, method, onLoad, onError, data) {
-    setRequest(url, method, onLoad, onError, data)
+    setRequest(url, method, onLoad, onError, data);
   };
 
 
