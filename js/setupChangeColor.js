@@ -10,7 +10,6 @@
 
   var setup = document.querySelector('.setup');
 
-
   var wizardCoat = setup.querySelector('.setup-wizard .wizard-coat');
   var wizardCoatInput = setup.querySelector('input[name=coat-color]');
 
@@ -20,17 +19,18 @@
   var fireball = setup.querySelector('.setup-fireball-wrap');
   var firebalInput = setup.querySelector('input[name=fireball-color]');
 
-
   wizardCoat.addEventListener('click', function () {
-    var color = getRandomIndex(COLORS_COAT);
-    wizardCoat.style.fill = color;
-    wizardCoatInput.value = color;
+    var newColor = getRandomIndex(COLORS_COAT);
+    wizardCoat.style.fill = newColor;
+    wizardCoatInput.value = newColor;
+    window.onCoatChange(newColor);
   });
 
   wizardEyes.addEventListener('click', function () {
-    var color = getRandomIndex(COLORS_EYES);
-    wizardEyes.style.fill = color;
-    wizardEyesInput.value = color;
+    var newColor = getRandomIndex(COLORS_EYES);
+    wizardEyes.style.fill = newColor;
+    wizardEyesInput.value = newColor;
+    window.onEyesChange(newColor);
   });
 
   fireball.addEventListener('click', function () {
