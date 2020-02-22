@@ -29,7 +29,7 @@
     var fragment = document.createDocumentFragment();
     var takeNumber;
 
-    var takeNumber = data.length > MAX_WIZARDS ? MAX_WIZARDS : data.length;
+    takeNumber = data.length > MAX_WIZARDS ? MAX_WIZARDS : data.length;
     setupSimilarList.innerHTML = '';
 
     for (var i = 0; i < takeNumber; i++) {
@@ -61,7 +61,7 @@
     return rank;
   };
 
-  window.updateWizards = function () {
+  var updateWizards = function () {
     render(wizards.slice().sort(function (left, right) {
       return getRank(right) - getRank(left);
     }));
